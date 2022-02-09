@@ -1,17 +1,29 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+:root{
+    --fonte1: Verdana, Geneva, Tahoma, sans-serif;
+    --fonte2:'Passion One', cursive;
+    --fonte3:'Sriracha', cursive;
+}
+
 *{
     margin: 0;
     padding: 0;
 }
 
+
 html, body{
     min-height: 100vh;
     background-color: darkgrey;
+    font-family: var(--fonte1);
 }
 
 a{
-    color: white;
+    color: black;
     text-decoration: none;
     font-weight: bolder;
 }
@@ -22,8 +34,12 @@ a:hover{
 
 /*HEADER*/
 header{
-    background-color: black;
-    color: white;
+    height: 13em;
+    background-image: url('../imagens/header.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: black;
     text-align: center;
 }
 
@@ -31,14 +47,22 @@ header > h1{
     padding-top: 50px;
     /*text-transform: uppercase;*/
     font-variant: small-caps;
+    font-family: var(--fonte2);
+    font-size: 4em;
 }
 
 /*SECTION*/
 section{
-    padding-top: 10vh;
+    padding-top: 6vh;
     padding-bottom: 10vh;
     line-height: 2em;
     padding-left: 30px;
+    font-family: var(--fonte3);
+    /* position: relative; */
+}
+
+section > p{
+    padding-bottom: 2em;
 }
 
 section.normal{
@@ -49,11 +73,50 @@ section.normal{
 section.imagem{
     background-color: rgb(51,51,51);
     color: white;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 section.imagem > p{
-    width: 400px;
-    background-color: rgba(0, 0, 0, 0.226);
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+section#imgDandara{
+    /* display: flexbox; */
+    /* position: absolute; */
+   /*  float: right;*/
+  /*   height: 60vh; */
+    /*width: 60vw; */
+    background-image: url('../imagens/imgDandara.jpg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding: 3em;
+    
+}
+section#img01{
+    background-image: url('../imagens/corrente-liberta.png');
+    
+}
+
+section#img02{
+    
+    background-image: url('../imagens/lago.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+section#img03{
+    background-image: url('../imagens/crianças.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+section#img04{
+    background-image: url('../imagens/por-do-sol.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
 }
 
 /*FOOTER*/
@@ -62,4 +125,20 @@ footer{
     color: white;
     text-align: center;
     padding: 10px;
+}
+
+/*RESPONSIVIDADE*/
+
+@media (max-width: 500px){
+    header > h1{
+        font-size: 2.5em;
+        padding-top: 70px;
+    }
+
+    #imgDandara{
+        background-image: none;
+        background-position: left top;
+        
+    }
+
 }
